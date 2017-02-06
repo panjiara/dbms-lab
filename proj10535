@@ -1,0 +1,8 @@
+CREATE TABLE proj10535
+( 
+  project_name VARCHAR2(10),
+  project_number NUMBER(4)PRIMARY KEY,
+  project_location VARCHAR2(10),
+department_number NUMBER(10)
+   
+);
