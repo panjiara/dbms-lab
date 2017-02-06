@@ -1,0 +1,10 @@
+create table emp10535
+(
+employee_code number(4) primary key,
+  employee_name varchar2(10),
+  department_number number(4),
+   basic_salary  number(4),
+   designation varchar2(10),
+   address varchar2(10)
+);
+ 
