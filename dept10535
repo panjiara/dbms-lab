@@ -1,0 +1,10 @@
+CREATE TABLE dept10535
+(
+department_name VARCHAR2(10),
+department_number NUMBER(4) PRIMARY KEY,
+department_location VARCHAR2(10),
+manager_id NUMBER(4)
+
+);
+
+
