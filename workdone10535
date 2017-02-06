@@ -1,0 +1,13 @@
+CREATE TABLE workdone10535
+(
+employee_code NUMBER(4),
+project_number NUMBER(4),
+work_hour NUMBER(4)
+
+
+);
+
+
+
+
+
