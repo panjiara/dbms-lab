@@ -1,0 +1,65 @@
+CREATE TABLE proj10535
+( 
+  project_name VARCHAR2(10),
+  project_number NUMBER(4)PRIMARY KEY,
+  project_location VARCHAR2(10),
+department_number NUMBER(10)
+   
+);
+CREATE TABLE workdone10535
+(
+employee_code NUMBER(4),
+project_number NUMBER(4),
+work_hour NUMBER(4)
+
+
+);
+
+
+
+CREATE TABLE dept10535
+(
+department_name VARCHAR2(10),
+department_number NUMBER(4) PRIMARY KEY,
+department_location VARCHAR2(10),
+manager_id NUMBER(4)
+
+);
+
+CREATE TABLE proj10535
+( 
+  project_name VARCHAR2(10),
+  project_number NUMBER(4)PRIMARY KEY,
+  project_location VARCHAR2(10),
+department_number NUMBER(10)
+   
+);
+
+
+select distinct employee_code 
+from workdone10535 w
+where  exists  
+(select * from proj10535 p where w.project_number=p.project_number and p.project_location = any('deo','rnc') );
+select * from proj10535
+select *from workdone10535
+
+
+
+
+
+select  employee_name
+from emp10535 e
+where  exists  
+(select * from workdone10535 w where w.employee_code=e.employee_code and w.work_hour = 10 );
+update workdone10535
+set work_hour=15
+where project_number=2;
+
+
+select  employee_name
+from emp10535 e
+where  exists  
+(select * from workdone10535 w where exists(select * from proj10535 p where p.project_number=w.project_number and p.project_location='rnc' and w.work_hour=10 ));
+
+
+select * from workdone10535 w where exists(select * from proj10535 p where p.project_number=w.project_number and p.project_location='rnc' and w.work_hour=10 )
