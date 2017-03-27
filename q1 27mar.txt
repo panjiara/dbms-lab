@@ -1,0 +1,4 @@
+select supplier_no
+from shipments_table
+group by supplier_no
+having sum(quantity) > (select avg(quantity) from shipments_table where supplier_no='S2')
