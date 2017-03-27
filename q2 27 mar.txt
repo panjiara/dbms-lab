@@ -1,0 +1,3 @@
+select supplier_no
+from shipments_table
+where part_no='P6'or part_no='P7' and project_no in (select project_no from projects_table where city='Delhi')
